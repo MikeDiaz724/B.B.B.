@@ -5,8 +5,8 @@ const mysql = require('mysql2');
 //change database credentials as needed
 const config = {
   host: 'localhost',
-  user: 'root',
-  password: 'password',
+  user: 'student',
+  password: 'Holacode1',
   database: 'yourDB',
 };
 
