@@ -7,7 +7,7 @@ const config = {
   host: 'localhost',
   user: 'student',
   password: 'Holacode1',
-  database: 'yourDB',
+  database: 'BBB',
 };
 
 const connection = mysql.createConnection(config);
