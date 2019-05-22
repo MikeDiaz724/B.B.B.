@@ -4,30 +4,32 @@ CREATE DATABASE BBB;
 
 USE BBB;
 
-CREATE TABLE user (
+CREATE TABLE User (
   id int NOT NULL AUTO_INCREMENT,
   user varchar(150) NOT NULL,
+  email VARCHAR(150) NOT NULL,
+  passcode VARCHAR(150) NOT NULL,
   PRIMARY KEY (ID)
 );
 
-INSERT INTO user (id, user) VALUES (1, "Panchito");
-INSERT INTO user (id, user) VALUES (2, "Marquito");
-INSERT INTO user (id, user) VALUES (3, "Brunito");
+INSERT INTO User (id, user, email, passcode) VALUES (1, "Panchito", "haha@gmail.com", "1234");
+INSERT INTO User (id, user, email, passcode) VALUES (2, "Marquito", "haha@gmail.com", "1234");
+INSERT INTO User (id, user, email, passcode) VALUES (3, "Brunito", "haha@gmail.com", "1234");
 
-CREATE TABLE items (
+CREATE TABLE Items (
   id int NOT NULL AUTO_INCREMENT,
   info varchar(150) NOT NULL,
   fecha DATE NOT NULL,
   PRIMARY KEY (ID)
 );
 
-INSERT INTO items (id, info, fecha) VALUES (1, "Laptop", curdate());
-INSERT INTO items (id, info, fecha) VALUES (2, "TV", curdate());
+INSERT INTO Items (id, info, fecha) VALUES (1, "Laptop", curdate());
+INSERT INTO Items (id, info, fecha) VALUES (2, "TV", curdate());
 
 
-CREATE TABLE photo (
+CREATE TABLE Photo (
   id int NOT NULL AUTO_INCREMENT,
-  url_item VARCHAR(150) NOT NULL
+  url_item VARCHAR(150) NOT NULL,
   PRIMARY KEY (ID)
 );
 

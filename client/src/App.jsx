@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
+import NavBar from './components/NavBar.jsx';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <h1 className = "header">B.B.B.</h1>
+        <NavBar/>  
       </div>
     );
   }
