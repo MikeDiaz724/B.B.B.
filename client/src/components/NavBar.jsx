@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class NavBar extends Component {
 	//renders data to the DOM
@@ -8,7 +9,7 @@ class NavBar extends Component {
 				<nav className="navbar navbar-inverse">
 					<div className="container-fluid">
 						<div className="navbar-header">
-							<a className="navbar-brand" href="#">B.B.B.</a>
+							<Link to={'/homePage'} className="navbar-brand"> B.B.B. </Link>
 						</div>
 						<form className="navbar-form navbar-left" action="/action_page.php">
 							<div className="input-group">
@@ -21,9 +22,9 @@ class NavBar extends Component {
   							</div>
 						</form> 
 						<ul className="nav navbar-nav navbar-right">
-							<li><a href="#"><span className="glyphicon "></span> Barter on B.B.B.</a></li>
-							<li><a href="#"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
-							<li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
+							<li><Link to={'/post'} className="glyphicon ">Barter on B.B.B. </Link></li>
+							<li><Link to={'/register'} className="glyphicon glyphicon-user">Sign up</Link></li>
+							<li><Link to={'/login'} className="glyphicon glyphicon-log-in">Sign in</Link></li>
 						</ul>
 					</div>
 				</nav>

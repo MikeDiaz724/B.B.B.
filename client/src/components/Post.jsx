@@ -4,7 +4,9 @@ class Post extends Component {
     //renders data to the DOM
     render() {
     return (
-
+        <div>
+            <h1>Post page</h1>
+        </div>
 	)};
 };
 
