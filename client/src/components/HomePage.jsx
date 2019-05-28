@@ -43,22 +43,22 @@ class HomePage extends Component {
         <h2><center>Home & Living</center></h2>
         <div style={{ width: "35%", margin: "auto" }}>
           <Carousel >
-            <img src="https://i.imgur.com/x9kgxN3.jpg" />
-            <img src="https://i.imgur.com/prg5Rno.jpg" />
-            <img src="https://i.imgur.com/x9kgxN3.jpg" />
-            <img src="https://i.imgur.com/prg5Rno.jpg" />
-            <img src="https://i.imgur.com/x9kgxN3.jpg" />
+            <img src="https://i.imgur.com/WZQT8cE.jpg" />
+            <img src="https://i.imgur.com/TJ9ua6I.jpg" />
+            <img src="https://i.imgur.com/WZQT8cE.jpg" />
+            <img src="https://i.imgur.com/TJ9ua6I.jpg" />
+            <img src="https://i.imgur.com/WZQT8cE.jpg" />
           </Carousel>
         </div>
 
         <h2><center>Other</center></h2>
         <div style={{ width: "35%", margin: "auto" }}>
           <Carousel >
-            <img src="https://i.imgur.com/x9kgxN3.jpg" />
-            <img src="https://i.imgur.com/prg5Rno.jpg" />
-            <img src="https://i.imgur.com/x9kgxN3.jpg" />
-            <img src="https://i.imgur.com/prg5Rno.jpg" />
-            <img src="https://i.imgur.com/x9kgxN3.jpg" />
+            <img src="https://i.imgur.com/KbqpDg4.jpg" />
+            <img src="https://i.imgur.com/ZKkP84l.jpg" />
+            <img src="https://i.imgur.com/KbqpDg4.jpg" />
+            <img src="https://i.imgur.com/ZKkP84l.jpg" />
+            <img src="https://i.imgur.com/KbqpDg4.jpg" />
           </Carousel>
         </div>
       </div>

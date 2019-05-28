@@ -9,11 +9,11 @@ class NavBar extends Component {
 				<nav className="navbar navbar-inverse">
 					<div className="container-fluid">
 						<div className="navbar-header">
-							<Link to={'/homePage'} className="navbar-brand"> B.B.B. </Link>
+							<Link to={'/'} className="navbar-brand"> B.B.B. </Link>
 						</div>
 						<form className="navbar-form navbar-left" action="/action_page.php">
 							<div className="input-group">
-								<input type="text" className="form-control" placeholder="Search"/>>
+								<input style={{ width: "500px" }} type="text" className="form-control" placeholder="Search"/>>
 									<div className="input-group-btn">
 										<button className="btn btn-default" type="submit" style={{position: 'inherit'}}>
 											<i className="glyphicon glyphicon-search"></i>

@@ -1,6 +1,8 @@
+body {
+  background-color: rgb(56, 56, 56);
+  margin-left: 50em ;
+}
 
-
-.carousel{
-  height: 50%;
-  width: 60%;
+.posting {
+  justify-content: center;
 }
