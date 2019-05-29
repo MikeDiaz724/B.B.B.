@@ -8,9 +8,9 @@ class Register extends React.Component {
       email: '',
       password: ''
     };
+    this.postData = this.postData.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.postData = this.postData.bind(this);
   }
 
   postData(url = '', data = {}) {
@@ -38,15 +38,15 @@ class Register extends React.Component {
     const { descript, email, password } = this.state;
 
     this.postData('/register', {
-      descript: descript.toLowerCase(),
-      email: email.toLowerCase(),
-      password: password.toLowerCase()
+      descript: descript,
+      email: email,
+      password: password,
     });
 
     this.setState({
-      descript: '',
-      email: '',
-      password: ''
+      descript: "",
+      email: "",
+      password: ""
     });
   }
 
