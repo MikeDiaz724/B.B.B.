@@ -12,18 +12,21 @@ const config = {
 
 const connection = mysql.createConnection(config);
 
-//Example mysql query using Promises
-const sampleQuery = function() {
-  return new Promise((resolve, reject) => {
-    connection.query('SELECT * FROM table', (err, data) => {
-      if (err) {
-        return reject(err);
+const postUser = function (descript, email, password, cb){
+  connection.query(
+    'INSERT INTO groceries (descript, email, password) VALUES (?, ?, ?);',
+    [descript, email, password],
+    (error, results) => {
+      if (error) {
+        throw error;
+      } else {
+        cb(results);
       }
-      return resolve(data);
-    });
-  });
+    }
+  );
 };
 
+
 module.exports = {
-  sampleQuery,
+  postUser,
 };

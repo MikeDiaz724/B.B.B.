@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Modern React boilerplate",
   "main": "index.js",
-  "repository": "https://github.com/BrunoTorresF/react-boilerplate",
-  "author": "Bruno Torres",
+  "repository": "https://github.com/MikeDiaz724/B.B.B..git",
+  "author": "Mike Diaz",
   "license": "MIT",
   "scripts": {
     "dev": "webpack --config webpack.config.js --watch --mode development",
@@ -18,6 +18,7 @@
     "compression": "^1.7.3",
     "express": "^4.16.4",
     "jquery": "^3.4.1",
+    "mysql2": "^1.6.5",
     "nuka-carousel": "^4.5.8",
     "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.8",
