@@ -14,7 +14,7 @@ const connection = mysql.createConnection(config);
 
 const postUser = function (descript, email, password, cb){
   connection.query(
-    'INSERT INTO groceries (descript, email, password) VALUES (?, ?, ?);',
+    'INSERT INTO User (user, email, passcode) VALUES (?,?,?)',
     [descript, email, password],
     (error, results) => {
       if (error) {
