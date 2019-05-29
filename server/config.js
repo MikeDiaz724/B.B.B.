@@ -1,8 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const compression = require('compression');
-const routes = require('./routes');
-
+const db = require('../database/mysql');
 
 const app = express();
 
@@ -15,6 +14,15 @@ app.use(express.static(__dirname + "/../client/dist"));
 //HTTP Requests go here
 
 
-app.post('/register', routes.addUser);
+app.post('/register', function(request, response){
+    console.log("node adduser is invokeds")
+    const { descript, email, password } = request.body;
+    db.postUser(descript, email, password, res => {
+      response
+        .status(200)
+        .send(res)
+        .end();
+    });
+  });
 
 module.exports = app;
