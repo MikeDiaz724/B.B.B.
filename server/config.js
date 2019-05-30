@@ -25,11 +25,12 @@ app.post('/register', function (request, response) {
   });
 });
 
-app.post('/authenticate', function(req, res) {
+app.post('/authenticate', (req, res) => {
   const { email } = req.body ;
   console.log(req.body)
-  res.end('done')
-  db.checkUser(email)
+  db.checkUser(email, (result) =>{
+    res.end(JSON.stringify(result));
+  });
 });
 
 

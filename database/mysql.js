@@ -30,12 +30,12 @@ const checkUser = (email, cb) => {
   console.log(email);
   
   connection.query(
-    'SELECT * FROM User WHERE email="' + email + '"LIMIT 1',
+    'SELECT id, user, email FROM User WHERE email="' + email + '"LIMIT 1',
     (err, res) => {
-      console.log(res[0]);     
+      cb(res[0]);     
     }
-  )
-}
+  );
+};
 
 module.exports = {
   postUser,

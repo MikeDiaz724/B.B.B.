@@ -19,8 +19,16 @@ class Login extends Component {
       })
     })
     .then(r => r.text().then(function (data) {
-      console.log(data)
-    }));
+      if (data === "") {
+        console.log("error");        
+      } else {
+        console.log(JSON.parse(data));        
+      }
+    }))
+    .catch(err => {
+      console.log(err);
+      
+    })
   };
   return (
 		<div>
