@@ -12,10 +12,10 @@ const config = {
 
 const connection = mysql.createConnection(config);
 
-const postUser = function (descript, email, password, cb){
+const postUser =  (user, email, password, cb) => {
   connection.query(
     'INSERT INTO User (user, email, passcode) VALUES (?,?,?)',
-    [descript, email, password],
+    [user, email, password],
     (error, results) => {
       if (error) {
         throw error;
@@ -26,7 +26,18 @@ const postUser = function (descript, email, password, cb){
   );
 };
 
+const checkUser = (email, cb) => {
+  console.log(email);
+  
+  connection.query(
+    'SELECT * FROM User WHERE email="' + email + '"LIMIT 1',
+    (err, res) => {
+      console.log(res[0]);     
+    }
+  )
+}
 
 module.exports = {
   postUser,
+  checkUser
 };

@@ -4,7 +4,7 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      descript: '',
+      user: '',
       email: '',
       password: ''
     };
@@ -35,31 +35,31 @@ class Register extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { descript, email, password } = this.state;
+    const { user, email, password } = this.state;
 
     this.postData('/register', {
-      descript: descript.toLowerCase(),
+      user: user.toLowerCase(),
       email: email.toLowerCase(),
       password: password.toLowerCase()
     });
 
     this.setState({
-      descript: '',
+      user: '',
       email: '',
       password: ''
     });
   }
 
   render() {
-    const { descript, email, password } = this.state;
+    const { user, email, password } = this.state;
     return (
       <div>
         <label>
           User Name:{' '}
           <input
             type="text"
-            name="descript"
-            value={descript}
+            name="user"
+            value={user}
             onChange={this.handleInput}s
           />
         </label>
@@ -77,7 +77,7 @@ class Register extends React.Component {
         <label>
           Password:{' '}
           <input
-            type="text"
+            type="password"
             name="password"
             value={password}
             onChange={this.handleInput}

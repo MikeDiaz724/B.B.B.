@@ -16,12 +16,21 @@ app.use(express.static(__dirname + "/../client/dist"));
 
 
 app.post('/register', function (request, response) {
-  const { descript, email, password } = request.body;
-  db.postUser(descript, email, password, res => {
+  const { user, email, password } = request.body;
+  db.postUser(user, email, password, res => {
     response
       .status(200)
       .send(res)
       .end();
   });
 });
+
+app.post('/authenticate', function(req, res) {
+  const { email } = req.body ;
+  console.log(req.body)
+  res.end('done')
+  db.checkUser(email)
+});
+
+
 module.exports = app;
