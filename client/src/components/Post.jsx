@@ -5,7 +5,11 @@ class Post extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			files: []
+			files: [
+				'nice.pdf',
+				'verycool.jpg',
+				'amazing.png'
+			]
 			}
 		};
 
@@ -57,7 +61,7 @@ class Post extends Component {
 						<DragAndDrop handleDrop={this.handleDrop} style={{
 							border: 'dashed grey 4px',
 							backgroundColor: 'rgba(255,255,255,.8)'
-						}}> Drop images here
+						}}> You can drag images here to upload them
 							<div style={{ height: 200, width: 950 }}>
 								{this.state.files.map((file) =>
 									<div key={file}>{file}</div>
