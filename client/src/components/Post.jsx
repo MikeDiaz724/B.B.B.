@@ -8,7 +8,7 @@ class Post extends Component {
 			info: "",
 			fecha: "",
 			title: "",
-			postalCode: 0,
+			postalCode: "",
 			pics:"",
 			donde: "",
 			userid:0,
@@ -17,7 +17,10 @@ class Post extends Component {
 				'verycool.jpg',
 				'amazing.png'
 			]
-			};
+			}
+		this.handleInput = this.handleInput.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.postData = this.postData.bind(this);
 		}
 
 	postData(url = '', data = {}) {
@@ -34,8 +37,10 @@ class Post extends Component {
 
 	handleInput(e) {
 		const { target } = e;
+		
 		const { name, value } = target;
-
+		console.log(e.target.value);
+		
 		this.setState({
 			[name]: value,
 		});
@@ -45,7 +50,7 @@ class Post extends Component {
 		e.preventDefault();
 		const { info, fecha, title, postalCode, pics, donde, userid } = this.state;
 
-		this.postData('/register', {
+		this.postData('/post', {
 			info: info.toLowerCase(),
 			fecha: fecha,
 			title: title.toLowerCase(),
@@ -77,6 +82,7 @@ class Post extends Component {
 
 
 	render() {
+		const { info, fecha, title, postalCode, pics, donde, userid } = this.state;
 		return (
 			<div className="posting">
 				<div>
@@ -89,6 +95,7 @@ class Post extends Component {
 										style={{ width: "500px" }} 
 										type="text" 
 										placeholder="Enter post title"
+										name="title"
 										value = {title}
 										onChange={this.handleInput} />
 								</td>
@@ -98,6 +105,7 @@ class Post extends Component {
 									style={{ width: "300px" }} 
 									type="text" 
 									placeholder="Enter location"
+									name="donde"
 									value = {donde} 
 									onChange={this.handleInput}/>
 								</td>
@@ -106,6 +114,7 @@ class Post extends Component {
 									<input 
 										type="text" 
 										placeholder="Enter postal code"
+										name="postalCode"
 										value ={postalCode} 
 										onChange={this.handleInput}/>
 								</td>
@@ -122,6 +131,7 @@ class Post extends Component {
 							height: "400px" }} 
 							type="text" 
 							placeholder="Enter post title"
+							name = "info"
 							value = {info}
 							onChange={this.handleInput} />
 					</center>

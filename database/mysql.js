@@ -28,7 +28,7 @@ const postUser =  (user, email, password, cb) => {
 
 const postItem = (info, fecha, title, postalCode, pics, donde, userid, cb) => {
   connection.query(
-    'INSERT INTO User (info, fecha, title, postalCode, pics, donde, userid) VALUES (?,?,?,?,?,?)',
+    'INSERT INTO Items (info, fecha, title, postalCode, pics, donde, userid) VALUES (?,?,?,?,?,?,?)',
     [info, fecha, title, postalCode, pics, donde, userid],
     (error, results) => {
       if (error) {
