@@ -11,6 +11,12 @@ import Register from './components/Register.jsx';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedIn: false
+    }
+  }
   render() {
     return (
       <div>

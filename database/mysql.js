@@ -26,18 +26,22 @@ const postUser =  (user, email, password, cb) => {
   );
 };
 
-const checkUser = (email, cb) => {
-  console.log(email);
-  
+const postItem = (info, fecha, title, postalCode, pics, donde, userid, cb) => {
   connection.query(
-    'SELECT id, user, email FROM User WHERE email="' + email + '"LIMIT 1',
-    (err, res) => {
-      cb(res[0]);     
+    'INSERT INTO User (info, fecha, title, postalCode, pics, donde, userid) VALUES (?,?,?,?,?,?)',
+    [info, fecha, title, postalCode, pics, donde, userid],
+    (error, results) => {
+      if (error) {
+        throw error;
+      } else {
+        cb(results);
+      }
     }
   );
 };
 
+
 module.exports = {
   postUser,
-  checkUser
+  postItem
 };

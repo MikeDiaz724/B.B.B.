@@ -25,13 +25,14 @@ app.post('/register', function (request, response) {
   });
 });
 
-app.post('/authenticate', (req, res) => {
-  const { email } = req.body ;
-  console.log(req.body)
-  db.checkUser(email, (result) =>{
-    res.end(JSON.stringify(result));
+app.post('/post', function (request, response) {
+  const { info, fecha, title, postalCode, pics, donde, userid } = request.body;
+  db.postUser(info, fecha, title, postalCode, pics, donde, userid, res => {
+    response
+      .status(200)
+      .send(res)
+      .end();
   });
 });
-
 
 module.exports = app;
