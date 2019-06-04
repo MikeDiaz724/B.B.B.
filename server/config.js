@@ -26,8 +26,10 @@ app.post('/register', function (request, response) {
 });
 
 app.post('/post', function (request, response) {
-  const { info, fecha, title, postalCode, pics, donde, userid } = request.body;
-  db.postItem(info, fecha, title, postalCode, pics, donde, userid, res => {
+  console.log(request.body);
+  
+  const { info, title, postalCode, pics, donde, userid } = request.body;
+  db.postItem(info, title, postalCode, pics, donde, userid, res => {
     response
       .status(200)
       .send(res)

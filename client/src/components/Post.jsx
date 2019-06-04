@@ -6,7 +6,6 @@ class Post extends Component {
 		super(props);
 		this.state = {
 			info: "",
-			fecha: "",
 			title: "",
 			postalCode: "",
 			pics:"",
@@ -37,9 +36,7 @@ class Post extends Component {
 
 	handleInput(e) {
 		const { target } = e;
-		
 		const { name, value } = target;
-		console.log(e.target.value);
 		
 		this.setState({
 			[name]: value,
@@ -48,11 +45,10 @@ class Post extends Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		const { info, fecha, title, postalCode, pics, donde, userid } = this.state;
+		const { info, title, postalCode, pics, donde, userid } = this.state;
 
 		this.postData('/post', {
 			info: info.toLowerCase(),
-			fecha: fecha,
 			title: title.toLowerCase(),
 			postalCode: postalCode,
 			pics: pics,
@@ -62,7 +58,6 @@ class Post extends Component {
 
 		this.setState({
 			info: "",
-			fecha: "",
 			title: "",
 			postalCode: "",
 			pics: "",
@@ -82,7 +77,7 @@ class Post extends Component {
 
 
 	render() {
-		const { info, fecha, title, postalCode, pics, donde, userid } = this.state;
+		const { info, title, postalCode, pics, donde, userid } = this.state;
 		return (
 			<div className="posting">
 				<div>
@@ -127,9 +122,13 @@ class Post extends Component {
 					<h3 style={{ marginLeft: "160px" }} >Posting body</h3>
 					<center>
 						<input 
-							style={{ width: "960px", 
-							height: "400px" }} 
-							type="text" 
+							style={{ 
+								width: "960px", 
+								height: "400px",
+								paddingBottom:350
+							 }} 
+							type="text"
+							
 							placeholder="Enter post title"
 							name = "info"
 							value = {info}

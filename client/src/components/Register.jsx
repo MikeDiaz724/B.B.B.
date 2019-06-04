@@ -44,9 +44,9 @@ class Register extends React.Component {
     });
 
     this.setState({
-      user: '',
-      email: '',
-      password: ''
+      user: "",
+      email: "",
+      password: ""
     });
   }
 
